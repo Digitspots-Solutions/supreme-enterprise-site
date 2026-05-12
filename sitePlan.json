@@ -1,0 +1,42 @@
+{
+  "businessName": "Supreme Enterprise",
+  "industry": "Manufacturing",
+  "tone": "professional",
+  "tagline": "Excellence in Manufacturing, Delivered with Precision",
+  "sections": [
+    {
+      "id": "hero",
+      "name": "Hero",
+      "copy": "Welcome to Supreme Enterprise - Your Trusted Manufacturing Partner in Benin City. We deliver precision-engineered manufacturing solutions that power businesses across Nigeria. Quality, reliability, and innovation in every product we create.",
+      "imagePrompt": "Modern Nigerian manufacturing facility interior with gleaming industrial machinery, skilled workers in safety gear operating precision equipment, bright natural lighting through large windows, organized production floor with quality control stations, professional atmosphere, Benin City industrial setting, photorealistic, high-quality",
+      "layout": "centered"
+    },
+    {
+      "id": "about",
+      "name": "About Us",
+      "copy": "Supreme Enterprise is a leading manufacturing company based in Benin City, Edo State. Located at 124 Sapele Road in the heart of Oredo, we have built our reputation on delivering exceptional manufacturing solutions that meet the highest standards of quality and precision. Our state-of-the-art facility combines cutting-edge technology with experienced craftsmanship to serve businesses across Nigeria. We understand the unique demands of the Nigerian market and tailor our manufacturing processes to deliver products that exceed expectations. From small-scale production runs to large industrial orders, Supreme Enterprise is your reliable partner for manufacturing excellence.",
+      "imagePrompt": "Professional Nigerian manufacturing team collaborating around a modern workstation, diverse group of engineers and technicians reviewing blueprints and quality standards, bright industrial office setting with manufacturing floor visible through glass walls, Benin City location, confident and competent atmosphere, photorealistic",
+      "layout": "split"
+    },
+    {
+      "id": "services",
+      "name": "Our Services",
+      "copy": "At Supreme Enterprise, we offer comprehensive manufacturing services designed to meet diverse industrial needs:\n\n• Custom Manufacturing Solutions - Tailored production to your exact specifications with precision engineering\n• Quality Control & Assurance - Rigorous testing and inspection at every stage of production\n• Product Development - From concept to finished product, we bring your ideas to life\n• Industrial Supply - Reliable supply chain management for consistent delivery\n• Technical Consultation - Expert guidance on manufacturing processes and optimization\n\nOur commitment to excellence ensures that every product leaving our facility meets international standards while remaining competitively priced for the Nigerian market.",
+      "imagePrompt": "Grid of four distinct manufacturing scenes: precision cutting equipment in action with sparks flying, quality inspector examining finished products with measuring tools, modern CAD design station with technical drawings, warehouse with organized inventory and loading bay, clean industrial aesthetic, Nigerian manufacturing context, photorealistic, professional lighting",
+      "layout": "grid"
+    },
+    {
+      "id": "contact",
+      "name": "Contact Us",
+      "copy": "Ready to discuss your manufacturing needs? Supreme Enterprise is here to help.\n\nVisit Our Facility:\n124 Sapele Road, Oredo\nBenin City, Edo State\nNigeria\n\nGet in Touch:\nCall us today to speak with our manufacturing specialists. We're available to answer your questions, provide quotes, and discuss how we can support your business with quality manufacturing solutions.\n\nWhether you need a custom production run, technical consultation, or reliable industrial supply, Supreme Enterprise delivers results you can count on. Contact us now to get started.",
+      "imagePrompt": "Welcoming entrance of a modern Nigerian manufacturing facility, prominent company signage on building facade, professional reception area visible through glass doors, paved driveway with company vehicles, Sapele Road location in Benin City, palm trees and tropical landscaping, clear blue sky, inviting and professional atmosphere, photorealistic",
+      "layout": "centered"
+    }
+  ],
+  "contact": {
+    "phone": "+234 803 953 2182",
+    "email": "info@supremeenterprise.com.ng",
+    "address": "124 Sapele Road, Oredo, Benin City, Edo State, Nigeria",
+    "whatsapp": "https://wa.me/2348039532182"
+  }
+}
