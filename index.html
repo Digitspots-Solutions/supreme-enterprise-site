@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supreme Enterprise - Excellence in Manufacturing, Delivered with Precision</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #0e1318;
+            --color-accent: #ed5219;
+            --color-bg: #F2EDE6;
+            --color-text: #0D1117;
+            --color-surface: #141a24;
+            --color-secondary-accent: #94b2b9;
+            --font-display: 'Barlow Condensed', sans-serif;
+            --font-body: 'IBM Plex Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(14, 19, 24, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 4px 4px 0 rgba(237, 82, 25, 0.3);
+        }
+
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav .logo span {
+            color: var(--color-accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+            font-family: var(--font-display);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 70px;
+            right: -100%;
+            width: 300px;
+            height: calc(100vh - 70px);
+            background: var(--color-surface);
+            box-shadow: -4px 4px 0 rgba(237, 82, 25, 0.3);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 2rem;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-menu ul a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.5rem 0;
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .mobile-menu ul a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Hero Section */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 80px 2rem;
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0s;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://images.pexels.com/photos/30990849/pexels-photo-30990849.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+        }
+
+        #hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.65);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-display);
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.1;
+        }
+
+        .hero-content h1 span {
+            color: var(--color-accent);
+        }
+
+        .hero-content .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            color: var(--color-secondary-accent);
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--color-accent);
+            color: #fff;
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: var(--font-display);
+            box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #c94415;
+            transform: translate(-2px, -2px);
+            box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        /* Section Base */
+        section {
+            padding: 80px 2rem;
+            position: relative;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0,0,0,0.02) 2px,
+                    rgba(0,0,0,0.02) 4px
+                );
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: var(--color-accent);
+        }
+
+        /* About Section */
+        #about {
+            background: var(--color-surface);
+            color: #fff;
+            clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+            padding: 120px 2rem;
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.1s;
+        }
+
+        #about .section-title {
+            color: #fff;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            box-shadow: 8px 8px 0 var(--color-accent);
+        }
+
+        .about-text p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Services Section */
+        #services {
+            background: var(--color-bg);
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        .services-intro {
+            max-width: 800px;
+            margin-bottom: 3rem;
+        }
+
+        .services-intro p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--color-surface);
+            padding: 2.5rem;
+            position: relative;
+            color: #fff;
+            box-shadow: 6px 6px 0 rgba(237, 82, 25, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--color-accent);
+        }
+
+        .service-card:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 9px 9px 0 rgba(237, 82, 25, 0.3);
+        }
+
+        .service-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-accent);
+        }
+
+        .service-card p {
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .services-image {
+            margin-top: 3rem;
+            width: 100%;
+        }
+
+        .services-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            box-shadow: 8px 8px 0 rgba(237, 82, 25, 0.3);
+        }
+
+        /* Contact Section */
+        #contact {
+            background: var(--color-primary);
+            color: #fff;
+            clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+            padding: 120px 2rem 80px;
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        #contact .section-title {
+            color: #fff;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            margin-top: 3rem;
+        }
+
+        .contact-info h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-accent);
+        }
+
+        .contact-info p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-details {
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--color-accent);
+        }
+
+        .contact-item strong {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--color-accent);
+        }
+
+        .contact-item a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--color-accent);
+        }
+
+        .contact-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            box-shadow: 8px 8px 0 var(--color-accent);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: #fff;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #20ba5a;
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-surface);
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.95rem;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content .tagline {
+                font-size: 1.1rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image img,
+            .contact-image img {
+                height: 300px;
+            }
+
+            section {
+                padding: 48px 1.5rem;
+            }
+
+            #about,
+            #contact {
+                padding: 80px 1.5rem 48px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 28px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav .logo {
+                font-size: 1.4rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">SUPREME <span>ENTERPRISE</span></div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>SUPREME <span>ENTERPRISE</span></h1>
+            <p class="tagline">Excellence in Manufacturing, Delivered with Precision</p>
+            <p>Welcome to Supreme Enterprise - Your Trusted Manufacturing Partner in Benin City. We deliver precision-engineered manufacturing solutions that power businesses across Nigeria. Quality, reliability, and innovation in every product we create.</p>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.pexels.com/photos/37198885/pexels-photo-37198885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Supreme Enterprise Team">
+                </div>
+                <div class="about-text">
+                    <p>Supreme Enterprise is a leading manufacturing company based in Benin City, Edo State. Located at 124 Sapele Road in the heart of Oredo, we have built our reputation on delivering exceptional manufacturing solutions that meet the highest standards of quality and precision.</p>
+                    <p>Our state-of-the-art facility combines cutting-edge technology with experienced craftsmanship to serve businesses across Nigeria. We understand the unique demands of the Nigerian market and tailor our manufacturing processes to deliver products that exceed expectations.</p>
+                    <p>From small-scale production runs to large industrial orders, Supreme Enterprise is your reliable partner for manufacturing excellence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-intro">
+                <p>At Supreme Enterprise, we offer comprehensive manufacturing services designed to meet diverse industrial needs. Our commitment to excellence ensures that every product leaving our facility meets international standards while remaining competitively priced for the Nigerian market.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Custom Manufacturing Solutions</h3>
+                    <p>Tailored production to your exact specifications with precision engineering</p>
+                </div>
+                <div class="service-card">
+                    <h3>Quality Control & Assurance</h3>
+                    <p>Rigorous testing and inspection at every stage of production</p>
+                </div>
+                <div class="service-card">
+                    <h3>Product Development</h3>
+                    <p>From concept to finished product, we bring your ideas to life</p>
+                </div>
+                <div class="service-card">
+                    <h3>Industrial Supply</h3>
+                    <p>Reliable supply chain management for consistent delivery</p>
+                </div>
+                <div class="service-card">
+                    <h3>Technical Consultation</h3>
+                    <p>Expert guidance on manufacturing processes and optimization</p>
+                </div>
+            </div>
+            <div class="services-image">
+                <img src="https://images.pexels.com/photos/5957161/pexels-photo-5957161.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Manufacturing Services">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>Ready to discuss your manufacturing needs? Supreme Enterprise is here to help.</p>
+                    
+                    <h3>Visit Our Facility</h3>
+                    <div class="contact-item">
+                        <strong>Address</strong>
+                        <p>124 Sapele Road, Oredo<br>Benin City, Edo State<br>Nigeria</p>
+                    </div>
+
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <strong>Phone</strong>
+                        <a href="tel:+2348039532182">+234 803 953 2182</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Email</strong>
+                        <a href="mailto:info@supremeenterprise.com.ng">info@supremeenterprise.com.ng</a>
+                    </div>
+
+                    <p style="margin-top: 2rem;">Whether you need a custom production run, technical consultation, or reliable industrial supply, Supreme Enterprise delivers results you can count on. Contact us now to get started.</p>
+                </div>
+                <div class="contact-image">
+                    <img src="https://images.pexels.com/photos/33662816/pexels-photo-33662816.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Supreme Enterprise Facility">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/2348039532182" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <svg width="35" height="35" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 0C7.164 0 0 7.164 0 16c0 2.824.738 5.482 2.026 7.784L.064 31.872l8.34-2.088A15.887 15.887 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm8.106 22.648c-.348.98-1.726 1.794-2.826 2.032-.738.156-1.702.282-4.942-.942-4.146-1.568-6.818-5.828-7.024-6.096-.204-.268-1.666-2.218-1.666-4.23 0-2.012 1.054-3.002 1.428-3.412.374-.41.816-.512 1.088-.512.272 0 .544.002.782.014.252.012.588-.096.92.702.34.816 1.156 2.828 1.258 3.032.102.204.17.442.034.71-.136.268-.204.436-.408.67-.204.234-.428.522-.612.7-.204.204-.416.424-.178.832.238.408 1.058 1.746 2.27 2.828 1.562 1.394 2.874 1.826 3.282 2.032.408.204.646.17.884-.102.238-.272.918-1.122 1.164-1.512.244-.39.488-.326.82-.196.332.13 2.11 1.014 2.47 1.182.362.168.604.252.69.396.084.138.084.714-.264 1.694z" fill="white"/>
+        </svg>
+    </a>
+
+    <footer>
+        <p>&copy; 2025 Supreme Enterprise. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
